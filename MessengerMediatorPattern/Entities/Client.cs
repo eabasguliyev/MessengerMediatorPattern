@@ -29,7 +29,7 @@ namespace MessengerMediatorPattern.Entities
             }
             else if (eventArgs.MessengerEventType == MessengerEventType.SomeoneLeft)
             {
-                message = client == this ? "You left" : $"{client.Nickname} left";
+                message = $"{client.Nickname} left";
             }
             else if(eventArgs.MessengerEventType == MessengerEventType.SomeoneWrote)
             {

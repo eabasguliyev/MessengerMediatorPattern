@@ -32,19 +32,14 @@ namespace MessengerMediatorPattern.Entities
             if (eventArgs.MessengerEventType == MessengerEventType.SomeoneJoined)
             {
                 AddClient(sender as Client);
-
-                ServerEvent?.Invoke(sender, eventArgs);
             }
             else if (eventArgs.MessengerEventType == MessengerEventType.SomeoneLeft)
             {
-                ServerEvent?.Invoke(sender, eventArgs);
                 
                 RemoveClient(sender as Client);
             }
-            else if (eventArgs.MessengerEventType == MessengerEventType.SomeoneWrote)
-            {
-                ServerEvent?.Invoke(sender, eventArgs);
-            }
+
+            ServerEvent?.Invoke(sender, eventArgs);
         }
     }
 }

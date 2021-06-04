@@ -14,8 +14,7 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <ListBox Background="Green"
-                     Margin="10"
+            <ListBox Margin="10"
                      ItemsSource="{Binding Client.Chat}"/>
         </Grid>
 
@@ -31,17 +30,21 @@
                      VerticalContentAlignment="Center"
                      FontSize="21"
                      Margin="10 0"
-                     Padding="10 0"/>
+                     Padding="10 0">
+            </TextBox>
 
             <StackPanel Grid.Row="1"
                         Orientation="Horizontal"
                         HorizontalAlignment="Right">
                 <Button Width="100"
+                        x:Name="ButtonSend"
                         Margin="5"
                         Content="Send"
                         FontSize="21"
                         Command="{Binding SendMessageCommand}"
-                        CommandParameter="{Binding ElementName=TextBoxMessage, Path=Text}"/>
+                        CommandParameter="{Binding ElementName=TextBoxMessage, Path=Text}">
+                </Button>
+
                 <Button Width="100"
                         Margin="5"
                         FontSize="21"
