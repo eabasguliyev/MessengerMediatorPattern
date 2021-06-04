@@ -1,4 +1,5 @@
-﻿using MessengerMediatorPattern.Entities;
+﻿using System.Windows;
+using MessengerMediatorPattern.Entities;
 
 namespace MessengerMediatorPattern.Commands
 {
@@ -14,6 +15,10 @@ namespace MessengerMediatorPattern.Commands
 
         public override void Execute(object parameter)
         {
+            if (parameter is Window window)
+                window.Close();
+
+
             _server.Notify(_client, new MessengerEventArgs()
             {
                 MessengerEventType = MessengerEventType.SomeoneLeft,

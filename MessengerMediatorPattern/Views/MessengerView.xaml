@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MessengerMediatorPattern.Views"
         mc:Ignorable="d"
-        Title="MessengerView" Height="600" Width="500">
+        Title="MessengerView" Height="600" Width="500"
+        x:Name="This">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
@@ -45,7 +46,8 @@
                         Margin="5"
                         FontSize="21"
                         Content="Left"
-                        Command="{Binding LeftMessengerCommand}"/>
+                        Command="{Binding LeftMessengerCommand}"
+                        CommandParameter="{Binding ElementName=This}"/>
             </StackPanel>
         </Grid>
     </Grid>
